@@ -31,7 +31,7 @@ thunder_download(char *b_url, char *b_refer_url,char* fileName,char* saveDir, ch
 	_bstr_t url(b_url);
 	_bstr_t refer(b_refer_url);
 	_bstr_t cookies(b_cookies);
-	pAgent->AddTask2(url, _bstr_t(fileName), _bstr_t(saveDir), _bstr_t(""), refer, 1, 0, -1, cookies);
+	pAgent->AddTask2(url, _bstr_t(fileName), _bstr_t(saveDir), _bstr_t("sffdfdffdf"), refer, 1, 0, -1, cookies);
 	pAgent->CommitTasks2(1);
 	pAgent->Release();
 	CoUninitialize();
@@ -51,8 +51,8 @@ int _tmain(int argc, char* argv[])
 	printf("refer: %s\n", argv[2]);
 	printf("dir: %s\n", argv[3]);
 	printf("filename: %s\n", argv[4]);
-	char   referer[256 + 1];
-	bool ret = thunder_download(argv[1], argv[2],argv[3], argv[4],"");
+	 
+	bool ret = thunder_download(argv[1], argv[2],argv[4], argv[3],"");
 	if (!ret)
 		return -1;
 
